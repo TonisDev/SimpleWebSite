@@ -7,3 +7,7 @@ p.ex2 {
   font-size: 50px;
   text-emphasis-color: red;
 }
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
