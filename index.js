@@ -1,13 +1,14 @@
 console.log("Hello Console");
-import "./styles.css";
-import Donkeyclip from "@donkeyclip/react";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <Donkeyclip height={400} staging={true} id="JLifqrak73V8PtN5cJV7zn" />
-    </div>
-  );
-}
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
