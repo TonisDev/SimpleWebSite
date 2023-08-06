@@ -22,18 +22,19 @@
 <Donkeyclip id="146aa7c8-0ba1-49d3-8e5b-df89a43434c0"/>
     </div>
     <script src="index.js"></script>
-    <script>
-  function injectCustomJS() {
-    // Example: Add a click event to a button within the iframe
-    const iframe = document.getElementById('myAnimation');
-    const iframeContent = iframe.contentWindow.document;
-    const button = iframeContent.getElementById('myButton');
-    
-    button.addEventListener('click', function() {
-      // Perform custom action when the button is clicked
-      console.log('Button clicked!');
-    });
-  }
+   <script>
+  const iframe = document.getElementById('myAnimation');
+  
+  window.addEventListener('message', function(event) {
+    if (event.origin === 'https://api.donkeyclip.com') {
+      // Check the message origin to ensure it's from the expected source
+      if (event.data === 'animationLoaded') {
+        // Perform custom action when animation sends 'animationLoaded' message
+        console.log('Animation loaded message received.');
+        // You can perform your desired action here
+      }
+    }
+  });
 </script>
     </body>
 </html>
